@@ -10,7 +10,13 @@
 # while attending the course
 #
 
-from collections import MutableMapping
+#from collections import MutableMapping
+try:
+    # Py3
+    from collections.abc import MutableMapping
+except ImportError:
+    # fallback cho môi trường rất cũ
+    from collections import MutableMapping
 
 class CaseInsensitiveDict(MutableMapping):
     """The :class:`CaseInsensitiveDict<MutableMapping>` object, which 
